@@ -1,0 +1,326 @@
+/* === Global Styles === */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f9fbff;
+  color: #2b2b2b;
+}
+
+/* === Login Page Styling (Konser-themed) === */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to right, #1e3a8a, #2563eb);
+  background-image: url('/images/concert-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.login-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.login-form {
+  z-index: 2;
+  background: #ffffffee;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  width: 320px;
+  position: relative;
+}
+
+.login-form h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 24px;
+  color: #1f2937;
+}
+
+.login-form input {
+  display: block;
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+}
+
+.login-form input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.login-form button {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  background: linear-gradient(to right, #2563eb, #1d4ed8);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.login-form button:disabled {
+  background: #94a3b8;
+}
+
+.error-message {
+  color: #dc2626;
+  font-size: 0.85rem;
+  margin-top: -6px;
+  margin-bottom: 10px;
+}
+
+/* === Home Page Styles === */
+.home-container {
+  color: #1f2937;
+  background: #f9fafb;
+}
+
+.banner-section {
+  position: relative;
+  height: 500px;
+  background-color: #1e40af;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  overflow: hidden;
+}
+
+.banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.85;
+}
+
+.banner-text {
+  position: absolute;
+  top: 30%;
+  left: 8%;
+  color: #fff;
+}
+
+.section-wrapper {
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+
+/* Konser Populer (scrollable) */
+.event-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding-bottom: 10px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.event-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.event-card {
+  flex: 0 0 auto;
+  width: 180px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  scroll-snap-align: start;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.event-card:hover {
+  transform: scale(1.04);
+}
+
+.event-image {
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+}
+
+.event-info {
+  padding: 10px;
+}
+
+.event-info h3 {
+  font-size: 15px;
+  margin-bottom: 4px;
+  color: #111827;
+}
+
+.event-info p {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.event-info .price {
+  font-weight: bold;
+  color: #2563eb;
+  margin-top: 6px;
+  font-size: 14px;
+}
+
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.event-grid-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  transition: 0.2s;
+}
+
+.event-grid-card:hover {
+  transform: scale(1.02);
+}
+
+.book-button {
+  margin-top: 12px;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  width: 100%;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* === Dashboard Styles === */
+.dashboard-traveloka {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+.header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.header h2 {
+  font-size: 26px;
+  color: #0369a1;
+}
+
+.header .user {
+  color: #555;
+  font-size: 14px;
+}
+
+.booking-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.booking-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+  border-left: 6px solid #3b82f6;
+  border: 1px solid #ddd;
+  transition: box-shadow 0.25s ease, transform 0.15s ease;
+}
+
+.booking-card:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+  cursor: pointer;
+  background-color: #f9f9f9;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.card-header h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #0f172a;
+}
+
+.card-body p {
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+.status {
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 13px;
+}
+
+.status.sukses {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status.menunggu {
+  background: #fef9c3;
+  color: #92400e;
+}
+
+.status.gagal {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* === Responsive === */
+@media (max-width: 600px) {
+  .booking-card {
+    padding: 15px;
+  }
+
+  .card-header h3 {
+    font-size: 16px;
+  }
+
+  .card-body p {
+    font-size: 13px;
+  }
+
+  .event-info p {
+    font-size: 13px;
+  }
+
+  .banner-text h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .banner-text p {
+    font-size: 1rem;
+  }
+}
