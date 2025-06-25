@@ -5,4 +5,4 @@ booking-service
 payment-service
 
 jalankan perintah 
-"run go main.go"
+"go run main.go"
